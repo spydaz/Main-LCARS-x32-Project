@@ -3,7 +3,7 @@
 
 
 Option Strict On
-
+Imports LCARS
 Imports System.Runtime.InteropServices
 Imports System.Reflection
 Imports System.Threading

@@ -1,11 +1,12 @@
-﻿Public Class frmLock
+﻿Imports LCARS
+Public Class frmLock
 
 #Region " SetWindowsPos "
 
     'All code from PInvoke.net
 
-    <Flags()> _
-Public Enum SetWindowPosFlags As UInteger
+    <Flags()>
+    Public Enum SetWindowPosFlags As UInteger
         ''' <summary>If the calling thread and the thread that owns the window are attached to different input queues,
         ''' the system posts the request to the thread that owns the window. This prevents the calling thread from
         ''' blocking its execution while other threads process the request.</summary>
@@ -68,7 +69,7 @@ Public Enum SetWindowPosFlags As UInteger
 #End Region
 
     Public Declare Function FindWindow Lib "user32" _
-    Alias "FindWindowA" (ByVal lpClassName As String, _
+    Alias "FindWindowA" (ByVal lpClassName As String,
     ByVal lpWindowName As String) As IntPtr
 
     Private canClose As Boolean = False

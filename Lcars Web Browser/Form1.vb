@@ -1,4 +1,5 @@
-﻿Public Class form1
+﻿Imports LCARS
+Public Class form1
     Inherits LCARS.LCARSForm
 
     Dim int1 As Integer = 0
@@ -124,8 +125,8 @@
         Public Shared Function GetFavoritesfromIE() As List(Of String)
             Dim list As New List(Of String)
             Try
-                For Each favorites As String In _
-                My.Computer.FileSystem.GetFiles(System.Environment.GetFolderPath(Environment.SpecialFolder.Favorites), _
+                For Each favorites As String In
+                My.Computer.FileSystem.GetFiles(System.Environment.GetFolderPath(Environment.SpecialFolder.Favorites),
                                                 FileIO.SearchOption.SearchAllSubDirectories, "*.url")
                     Using sr As System.IO.StreamReader = New System.IO.StreamReader(favorites)
                         While Not sr.EndOfStream
